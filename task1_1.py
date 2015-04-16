@@ -45,9 +45,10 @@ def atm(summ):
 	return outlist
 
 
+
 print multipliers(30030)
 
-print equation(1, 3, 3) # 2x^2 + 19x + 35 = 0
+print equation(1, 3, 3) # x^2 + 3x + 3 = 0
 
 print simple(13)
 
