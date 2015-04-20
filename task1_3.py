@@ -14,19 +14,25 @@ def statistics(list):
 
 
 def end_sort(list):
-	pass
-
+	list.sort(key=lambda letter: letter[-1])
+	return list
 
 def insert_in_sort(list,string):
 	pass
 
 
 def insert_in_list(list1,list2,element):
-	pass
+	if element in list1:
+		list2.insert(list1.index(element),element)
+	return list2
+	
 
-
-def remove_odd_str(string):
-	pass
+def remove_odd_str(big_string):
+	temp=[]
+	for word in big_string.split(" "):
+		if len(word)%2==0:
+			temp.append(word)
+	return " ".join(temp)
 
 
 def find_sequence(list):
@@ -35,3 +41,9 @@ def find_sequence(list):
 
 
 print iteration(['adf','afs','fsa','adf'])
+
+print end_sort(["Hello","How are you","I'm fine","And","Right"])
+
+print insert_in_list(['asd','vre','gfd','ldkdf','sdf','vtr'],['sdfa','nhc','xgf','bng'],'gfd')
+
+print remove_odd_str("Bears are the best animals ever")
