@@ -18,8 +18,7 @@ def palindrome(pali):
 
 def find_letter(where, letter):
 	result=[]
-	temp=where.split(" ")
-	for word in temp:
+	for word in where.split(" "):
 		if word[0]==letter or word.lower()[0]==letter or word.upper()[0]==letter:
 			result.append(word)
 	return result
