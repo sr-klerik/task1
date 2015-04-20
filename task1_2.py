@@ -3,24 +3,17 @@
 import random
 
 def letters(big_string):
-	result=""
-	if big_string.istitle():
-		for temp in big_string:
-			if 'A'<=temp<='Z':
-				result+=temp
-	return result
+	result=[]
+	for temp in big_string:
+		if temp.isupper():
+			result.append(temp)
+	return " ".join(result)
 
 
 def palindrome(pali):
-	temp=0
-	while temp < len(pali)/2-1:
-		if pali[temp]==pali[-temp-1]:
-			temp+=1
-			result="True"
-		else: 
-			result="False" 
-			break
-	return result
+	if pali==pali[::-1]:
+		return "True"
+	else: return "False"		
 
 
 def find_letter(where, letter):
@@ -33,17 +26,14 @@ def find_letter(where, letter):
 
 
 def mix_words(just_string):
-	result=""
 	temp=just_string.split(" ")
-	while temp:
-		i=random.randrange(len(temp))
-		result+=temp.pop(i)+" "
-	return result.capitalize()
+	random.shuffle(temp)
+	return " ".join(temp)
 
 
 print letters("Trees Are So Kind")
 
-print palindrome("avidsf fsdiva")
+print palindrome("avid diva")
 
 print find_letter("Bears are the best animals ever", 'b')
 
