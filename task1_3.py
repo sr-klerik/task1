@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+#
 def iteration(list):	
 	result=[]
 	for element in list:
@@ -8,6 +8,7 @@ def iteration(list):
 			else: result.append(element)
 	return result
 
+#
 def statistics(list):
 	type_dictionary={}
 	for element in list:
@@ -17,21 +18,26 @@ def statistics(list):
 			type_dictionary[type(element)]=1
 	return type_dictionary
 
-
+#
 def end_sort(list):
 	list.sort(key=lambda letter: letter[-1])
 	return list
 
+#
 def insert_in_sort(list,string):
-	pass
+	for element in list:
+		if element[-1]>string[-1]:
+			list.insert(list.index(element),string)
+			break
+	return list
 
-
+#
 def insert_in_list(list1,list2,element):
 	if element in list1:
 		list2.insert(list1.index(element),element)
 	return list2
 	
-
+#
 def remove_odd_str(big_string):
 	temp=[]
 	for word in big_string.split(" "):
@@ -40,6 +46,7 @@ def remove_odd_str(big_string):
 	return " ".join(temp)
 
 
+#Too difficult
 def find_sequence(list):
 	temp=[]
 	out_list=[]
@@ -62,6 +69,8 @@ print iteration(['adf','afs','fsa','adf'])
 print statistics([['vsdf',[1,"df"]],'sdc',4.12,[3.4,'assf'],'w','Dow',123,3.5])
 
 print end_sort(["Hello","How are you","I'm fine","And","Right"])
+
+print insert_in_sort(["And", "I'm fine", "Hello", "Right", "How are you"],"Gas")
 
 print insert_in_list(['asd','vre','gfd','ldkdf','sdf','vtr'],['sdfa','nhc','xgf','bng'],'gfd')
 
