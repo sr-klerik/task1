@@ -8,9 +8,14 @@ def iteration(list):
 			else: result.append(element)
 	return result
 
-
 def statistics(list):
-	pass
+	type_dictionary={}
+	for element in list:
+		if type(element) in type_dictionary:
+			type_dictionary[type(element)]+=1
+		else:
+			type_dictionary[type(element)]=1
+	return type_dictionary
 
 
 def end_sort(list):
@@ -36,14 +41,30 @@ def remove_odd_str(big_string):
 
 
 def find_sequence(list):
-	pass
-
+	temp=[]
+	out_list=[]
+	for number in list:
+		temp.append(number)
+		if temp == range(temp[0],number+1):
+			if len(temp)>len(out_list):
+                                out_list=temp
+		else:
+			temp.pop()
+			if len(temp)>len(out_list):
+				out_list=temp
+			temp=[]
+			temp.append(number)
+	return out_list
 
 
 print iteration(['adf','afs','fsa','adf'])
+
+print statistics([['vsdf',[1,"df"]],'sdc',4.12,[3.4,'assf'],'w','Dow',123,3.5])
 
 print end_sort(["Hello","How are you","I'm fine","And","Right"])
 
 print insert_in_list(['asd','vre','gfd','ldkdf','sdf','vtr'],['sdfa','nhc','xgf','bng'],'gfd')
 
 print remove_odd_str("Bears are the best animals ever")
+
+print find_sequence([1,2,3,5,7,8,9,10,11,12])
