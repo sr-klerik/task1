@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import random
+from random import shuffle
 
 def letters(big_string):
 	result=[]
@@ -26,7 +26,7 @@ def find_letter(where, letter):
 
 def mix_words(just_string):
 	temp=just_string.split(" ")
-	random.shuffle(temp)
+	shuffle(temp)
 	return " ".join(temp)
 
 
