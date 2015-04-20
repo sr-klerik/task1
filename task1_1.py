@@ -1,11 +1,12 @@
 #!/usr/bin/python
-import math
+from math import sqrt
+from math import fmod
 
 def multipliers(number):
 	outlist=[]
 	temp=2
 	while temp < number:
-		if math.fmod(number,temp)==0:
+		if number%temp==0:
 			number/=temp
 			outlist.append(temp)
 			temp+=1
@@ -16,22 +17,19 @@ def multipliers(number):
 
 def equation(a, b, c):
 	outlist=[]
-	outlist.append((-b+math.sqrt(4*b*c))/2*a)
-	outlist.append((-b-math.sqrt(4*b*c))/2*a)
+	outlist.append((-b+sqrt(4*b*c))/2*a)
+	outlist.append((-b-sqrt(4*b*c))/2*a)
 	return outlist
 
 
 def simple(number):
 	temp=2
 	result=''
-	while temp < number:
-		if math.fmod(number,temp)==0:
-			result="Not simple"
-			break
+	while temp < sqrt(number):
+		if number%temp==0:
+			return "Not Simple"
 		temp+=1
-	if number==temp:
-		result="Simple"
-	return result
+	return "Simple"
 
 
 # atm uses only 100, 50, 20, 10, 5 and 1 notes.
@@ -40,8 +38,8 @@ def atm(summ):
 	outlist=[]
 	while summ!=0:
 		for notes in noteslist:
-			outlist.append((summ-math.fmod(summ,notes))/notes)
-			summ=math.fmod(summ,notes)
+			outlist.append((summ-fmod(summ,notes))/notes)
+			summ=fmod(summ,notes)
 	return outlist
 
 
