@@ -1,17 +1,17 @@
 #!/usr/bin/python
 #
-def iteration(list):	
+def iteration(big_list):	
 	result=[]
-	for element in list:
+	for element in big_list:
 		if list.count(element) > 1:
 			if element in result: continue
 			else: result.append(element)
 	return result
 
 #
-def statistics(list):
+def statistics(big_list):
 	type_dictionary={}
-	for element in list:
+	for element in big_list:
 		if type(element) in type_dictionary:
 			type_dictionary[type(element)]+=1
 		else:
@@ -19,23 +19,23 @@ def statistics(list):
 	return type_dictionary
 
 #
-def end_sort(list):
-	list.sort(key=lambda letter: letter[-1])
-	return list
+def end_sort(big_list):
+	big_list.sort(key=lambda letter: letter[-1])
+	return big_list
 
 #
-def insert_in_sort(list,string):
-	for element in list:
+def insert_in_sort(big_list,string):
+	for element in big_list:
 		if element[-1]>string[-1]:
-			list.insert(list.index(element),string)
+			big_list.insert(big_list.index(element),string)
 			break
-	return list
+	return big_list
 
 #
-def insert_in_list(list1,list2,element):
-	if element in list1:
-		list2.insert(list1.index(element),element)
-	return list2
+def insert_in_list(big_list1,big_list2,element):
+	if element in big_list1:
+		big_list2.insert(big_list1.index(element),element)
+	return big_list2
 	
 #
 def remove_odd_str(big_string):
@@ -47,10 +47,10 @@ def remove_odd_str(big_string):
 
 
 #Too difficult
-def find_sequence(list):
+def find_sequence(big_list):
 	temp=[]
 	out_list=[]
-	for number in list:
+	for number in big_list:
 		temp.append(number)
 		if temp == range(temp[0],number+1):
 			if len(temp)>len(out_list):
