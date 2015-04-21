@@ -17,8 +17,10 @@ def multipliers(number):
 
 def equation(a, b, c):
 	outlist=[]
-	outlist.append((-b+sqrt(4*b*c))/2*a)
-	outlist.append((-b-sqrt(4*b*c))/2*a)
+	if 4*b*c > 0:
+		outlist.append((-b+sqrt(4*b*c))/2*a)
+		outlist.append((-b-sqrt(4*b*c))/2*a)
+	else: return "discriminant is less than zero"
 	return outlist
 
 
