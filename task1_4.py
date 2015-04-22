@@ -18,7 +18,7 @@ def merge_dict(input_dict1,input_dict2):
 	input_dict1.update(input_dict2)
 	return input_dict1
 
-#Deception
+#
 def calc(function,operand1,operand2):
 	output_dict={"add":operand1+operand2,"multi":operand1*operand2,"sub":operand1-operand2,"div":operand1/operand2}
 	return output_dict[function]
