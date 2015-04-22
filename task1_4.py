@@ -17,12 +17,8 @@ def merge_dict(dict1,dict2):
 
 #Deception
 def calc(func,oper1,oper2):
-	kortezh=('add','multi')
-	for key in filter(lambda x: func=='add', kortezh):
-		return oper1+oper2
-	for key in filter(lambda x: func=="multi", kortezh):
-		return oper1*oper2
-	
+	dict={"add":oper1+oper2,"multi":oper1*oper2,"sub":oper1-oper2,"div":oper1/oper2}
+	return dict[func]
 
 #
 def invert(dict):
