@@ -1,31 +1,34 @@
 #!/usr/bin/python
 #
-def find_string(dict,my_str):
-	if my_str in dict:
-		dict[my_str]=None
+def find_string(input_dict,my_str):
+	if my_str in input_dict:
+		input_dict[my_str]=None
 	else: return "String not find in dictionary"
-	return dict
+	return input_dict
 
 #
-def merge_dict(dict1,dict2):
-	for key,value in dict1.items():
-		if key in dict2:
-			del dict1[key]
-			del dict2[key]
-	dict1.update(dict2)
-	return dict1
+def merge_dict(input_dict1,input_dict2):
+	temp=[]
+	for key,value in input_dict1.iteritems():
+		if key in input_dict2:
+			temp.append(key)
+	for key in temp:
+		del input_dict1[key]
+		del input_dict2[key]
+	input_dict1.update(input_dict2)
+	return input_dict1
 
 #Deception
-def calc(func,oper1,oper2):
-	dict={"add":oper1+oper2,"multi":oper1*oper2,"sub":oper1-oper2,"div":oper1/oper2}
-	return dict[func]
+def calc(function,operand1,operand2):
+	output_dict={"add":operand1+operand2,"multi":operand1*operand2,"sub":operand1-operand2,"div":operand1/operand2}
+	return output_dict[function]
 
 #
-def invert(dict):
-	for key,value in dict.items():
-		dict[value]=key
-		del dict[key]
-	return dict
+def invert(input_dict):
+	temp={}
+	for key,value in input_dict.iteritems():
+		temp[value]=key
+	return temp
 ##
 print find_string({"a":1,"b":2},"a")
 
