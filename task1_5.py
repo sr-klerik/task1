@@ -1,27 +1,31 @@
 #!/usr/bin/python
 import argparse
 from sys import version_info
+from sys import argv
 from os import listdir,getlogin
 from datetime import datetime
 
+class AlarmError(Exception):
+	def __init__(self,value):
+        	self.value=value
+                self.messages='May be modify your number?'
+	def __str__(self):
+		return repr(self.messages)
 
 #
 def for_except(number):
-	class Alarm(Exception):
-        	def __init__(self,value):
-			self.messages="May be modify your number?"
-
 	try:
 		result=1/number
-		raise Alarm(number)
+		raise AlarmError(number)
 	except ArithmeticError:
 		print "You can not divide by zero."
-	except Alarm as a:
-		print a.messages
+	except AlarmError as a:
+		print a
 	else:
 		print result
 	finally:
 		print "You number =",number
+
 
 #
 parser = argparse.ArgumentParser(conflict_handler='resolve')
@@ -30,9 +34,10 @@ parser.add_argument('-d','--date', action="store_true", help="Print current date
 parser.add_argument('-u','--uname', action="store_true", help="Print name currnet user")
 parser.add_argument('-v','--version', action="store_true",  help="Print current version of python")
 parser.add_argument('-T','--tree', action="store_true", help="Print list of file in current directory")
-parser.add_argument('--number',action='store', help="Input parameter for function. This function divide 1 on you number")
+parser.add_argument('--number',action='store', type=float, help="Input parameter for function. This function divide 1 on your number")
 
 result=parser.parse_args()
+#
 if result.time:
 	current_time=datetime.today()
 	print current_time.timetz()
@@ -45,8 +50,8 @@ if result.version:
 	print version_info
 if result.tree:
 	print listdir(".")
-
-try:
-	for_except(int(result.number))
-except:
-	pass
+#
+if len(argv) == 1:
+        parser.print_help()
+else:
+	for_except(result.number)
