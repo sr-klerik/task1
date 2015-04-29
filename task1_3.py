@@ -54,7 +54,7 @@ def find_sequence(big_list):
 		temp.append(number)
 		if temp == range(temp[0],number+1):
 			if len(temp)>len(out_list):
-                                out_list=temp
+				out_list=temp
 		else:
 			temp.pop()
 			if len(temp)>len(out_list):
