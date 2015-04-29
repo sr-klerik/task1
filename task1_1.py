@@ -1,7 +1,9 @@
 #!/usr/bin/python
+
 from math import sqrt
 from math import fmod
 
+#
 def multipliers(number):
 	outlist=[]
 	temp=2
@@ -14,7 +16,7 @@ def multipliers(number):
 	outlist.append(number)
 	return outlist
 
-
+#
 def equation(a, b, c):
 	outlist=[]
 	if 4*b*c > 0:
@@ -23,7 +25,7 @@ def equation(a, b, c):
 	else: return "discriminant is less than zero"
 	return outlist
 
-
+#
 def simple(number):
 	temp=2
 	result=''
@@ -45,11 +47,11 @@ def atm(summ):
 	return outlist
 
 
-
+##
 print multipliers(30030)
-
+#
 print equation(1, 3, 3) # x^2 + 3x + 3 = 0
-
+#
 print simple(13)
-
+#
 print atm(287)

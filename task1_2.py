@@ -2,6 +2,7 @@
 
 from random import shuffle
 
+#
 def letters(big_string):
 	result=[]
 	for temp in big_string:
@@ -9,13 +10,13 @@ def letters(big_string):
 			result.append(temp)
 	return " ".join(result)
 
-
+#
 def palindrome(pali):
 	if pali==pali[::-1]:
 		return "True"
 	else: return "False"		
 
-
+#
 def find_letter(where, letter):
 	result=[]
 	for word in where.split(" "):
@@ -23,17 +24,17 @@ def find_letter(where, letter):
 			result.append(word)
 	return result
 
-
+#
 def mix_words(just_string):
 	temp=just_string.split(" ")
 	shuffle(temp)
 	return " ".join(temp)
 
-
+##
 print letters("Trees Are So Kind")
-
+#
 print palindrome("avid diva")
-
+#
 print find_letter("Bears are the best animals ever", 'b')
-
+#
 print mix_words("Bears are the best animals ever")

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+
 #
 def iteration(big_list):	
 	result=[]
@@ -63,17 +64,17 @@ def find_sequence(big_list):
 			temp.append(number)
 	return out_list
 
-
+##
 print iteration(['adf','afs','fsa','adf'])
-
+#
 print statistics([['vsdf',[1,"df"]],'sdc',4.12,[3.4,'assf'],'w','Dow',123,3.5])
-
+#
 print end_sort(["Hello","How are you","I'm fine","And","Right"])
-
+#
 print insert_in_sort(["And", "I'm fine", "Hello", "Right", "How are you"],"Gas")
-
+#
 print insert_in_list(['asd','vre','gfd','ldkdf','sdf','vtr'],['sdfa','nhc','xgf','bng'],'gfd')
-
+#
 print remove_odd_str("Bears are the best animals ever")
-
+#
 print find_sequence([1,2,3,5,7,8,9,10,11,12])

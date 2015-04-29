@@ -1,4 +1,5 @@
 #!/usr/bin/python
+
 #
 def find_string(input_dict,my_str):
 	if my_str in input_dict:
@@ -29,11 +30,12 @@ def invert(input_dict):
 	for key,value in input_dict.iteritems():
 		temp[value]=key
 	return temp
+
 ##
 print find_string({"a":1,"b":2},"a")
-
+#
 print merge_dict({"a":1,"b":2},{"b":2,"c":3})
-
+#
 print calc('add',2,4)
-
+#
 print invert({"a":1,"b":2})
